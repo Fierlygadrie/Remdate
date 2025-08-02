@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground">
+
+    <!-- Header dengan icon dan judul -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp">
+
+        <ImageView
+            android:src="@drawable/ic_notebook"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Logo Remdate" />
+
+        <TextView
+            android:text="Remdate"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Filter kata kunci & tanggal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Spinner
+            android:id="@+id/filterSpinner"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_yellow" />
+
+        <Spinner
+            android:id="@+id/dateSpinner"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_green"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Tombol navigasi virtual -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/bookmarkButton"
+            android:src="@drawable/ic_bookmark"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Bookmark"
+            android:background="@drawable/tab_blue"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/historyButton"
+            android:src="@drawable/ic_history"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="History"
+            android:background="@drawable/tab_orange"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:src="@drawable/ic_settings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Settings"
+            android:background="@drawable/tab_gray"/>
+    </LinearLayout>
+
+    <!-- Input pencarian -->
+    <EditText
+        android:id="@+id/searchBox"
+        android:hint="Cari berita Rempang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/tab_white"/>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:text="Cari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_yellow"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- WebView dan loading -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <!-- Tombol refresh dan share -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/refreshButton"
+            android:src="@android:drawable/ic_menu_rotate"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Refresh"
+            android:background="@drawable/tab_green"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:src="@android:drawable/ic_menu_share"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Share"
+            android:background="@drawable/tab_blue"/>
+    </LinearLayout>
+</LinearLayout>
